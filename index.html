@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Student List</title>
+  <link href="reset.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="page">
+
+    <header class="header">
+      <h2>Students</h2>
+
+      <!--Extra Credit: Dynamically insert search form here
+
+      EXAMPLE - Search form:-->
+
+      <label for="search" class="student-search">
+        <input class="searchBar" id="search" placeholder="Search by name...">
+        <button type="button">Search</button>
+      </label>
+
+
+
+    </header>
+
+    <ul class="student-list">
+
+      <!--Dynamically insert students here
+        
+        EXAMPLE - Student list item:-->
+
+      <li class="student-item cf">
+        <div class="student-details">
+          <img class="avatar" src="https://randomuser.me/api/portraits/women/25.jpg" alt="Profile Picture">
+          <h3>Ethel Dean</h3>
+          <span class="email">ethel.dean@example.com</span>
+        </div>
+        <div class="joined-details">
+          <span class="date">Joined 12-15-2005</span>
+        </div>
+      </li>
+
+      <li class="student-item cf">
+        <div class="student-details">
+          <img class="avatar" src="https://randomuser.me/api/portraits/women/88.jpg" alt="Profile Picture">
+          <h3>Lorraine Lynch</h3>
+          <span class="email">lorraine.lynch@example.com</span>
+        </div>
+        <div class="joined-details">
+          <span class="date">02-24-2006</span>
+        </div>
+      </li>
+
+      <li class="student-item cf">
+        <div class="student-details">
+          <img class="avatar" src="https://randomuser.me/api/portraits/men/23.jpg" alt="Profile Picture">
+          <h3>Gregory Vargas</h3>
+          <span class="email">gregory.vargas@example.com</span>
+        </div>
+        <div class="joined-details">
+          <span class="date">03-20-2013</span>
+        </div>
+      </li>
+
+      <li class="student-item cf">
+        <div class="student-details">
+          <img class="avatar" src="https://randomuser.me/api/portraits/men/50.jpg" alt="Profile Picture">
+          <h3>Lawrence Martin</h3>
+          <span class="email">lawrence.martin@example.com</span>
+        </div>
+        <div class="joined-details">
+          <span class="date">06-10-2007</span>
+        </div>
+      </li>
+
+      <li class="student-item cf">
+        <div class="student-details">
+          <img class="avatar" src="https://randomuser.me/api/portraits/women/21.jpg" alt="Profile Picture">
+          <h3>Stacey Wells</h3>
+          <span class="email">stacey.wells@example.com</span>
+        </div>
+        <div class="joined-details">
+          <span class="date">09-22-2004</span>
+        </div>
+      </li>
+
+      <li class="student-item cf">
+        <div class="student-details">
+          <img class="avatar" src="https://randomuser.me/api/portraits/men/56.jpg" alt="Profile Picture">
+          <h3>Terrance Newman</h3>
+          <span class="email">terrance.newman@example.com</span>
+        </div>
+        <div class="joined-details">
+          <span class="date">06-28-2007</span>
+        </div>
+      </li>
+
+      <li class="student-item cf">
+        <div class="student-details">
+          <img class="avatar" src="https://randomuser.me/api/portraits/men/6.jpg" alt="Profile Picture">
+          <h3>Morris Burton</h3>
+          <span class="email">morris.burton@example.com</span>
+        </div>
+        <div class="joined-details">
+          <span class="date">02-09-2016</span>
+        </div>
+      </li>
+
+      <li class="student-item cf">
+        <div class="student-details">
+          <img class="avatar" src="https://randomuser.me/api/portraits/women/22.jpg" alt="Profile Picture">
+          <h3>Terra Franklin</h3>
+          <span class="email">terra.franklin@example.com</span>
+        </div>
+        <div class="joined-details">
+          <span class="date">12-24-2008</span>
+        </div>
+      </li>
+
+      <li class="student-item cf">
+        <div class="student-details">
+          <img class="avatar" src="https://randomuser.me/api/portraits/men/99.jpg" alt="Profile Picture">
+          <h3>Ted Bradley</h3>
+          <span class="email">ted.bradley@example.com</span>
+        </div>
+        <div class="joined-details">
+          <span class="date">11-29-2017</span>
+        </div>
+      </li>
+
+      <li class="student-item cf">
+        <div class="student-details">
+          <img class="avatar" src="https://randomuser.me/api/portraits/women/79.jpg" alt="Profile Picture">
+          <h3>Celina Griffin</h3>
+          <span class="email">celina.griffin@example.com</span>
+        </div>
+        <div class="joined-details">
+          <span class="date">07-02-2006</span>
+        </div>
+      </li>
+
+
+
+
+    </ul>
+
+    <div class="pagination">
+      <ul class="link-list">
+
+        <!--Dynamically insert pagination buttons here
+
+        EXAMPLE - Two pagination buttons, one with active class, one without:-->
+
+        <li>
+          <button type="button" class="active">1</button>
+        </li>
+        <li>
+          <button type="button">2</button>
+        </li>
+
+
+
+      </ul>
+    </div>
+
+  </div>
+  <script src="data.js"></script>
+  <!--<script src="js/script.js"></script>-->
+</body>
+
+</html>
