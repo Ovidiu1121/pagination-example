@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Student List</title>
-  <link href="reset.css" rel="stylesheet">
+  <link href="css/reset.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
 </head>
 
@@ -29,6 +29,12 @@
 
     </header>
 
+    <aside class="aside-container">
+
+      <a href="createCard.html">Create your card</a>
+
+    </aside>
+
     <ul class="student-list">
 
       <!--Dynamically insert students here
@@ -43,6 +49,10 @@
         </div>
         <div class="joined-details">
           <span class="date">Joined 12-15-2005</span>
+        </div>
+        <div class="action">
+          <button class="delete">Delete</button>
+          <button class="update">Update</button>
         </div>
       </li>
 
@@ -170,8 +180,9 @@
     </div>
 
   </div>
-  <script src="data.js"></script>
-  <!--<script src="js/script.js"></script>-->
+  <script src="js/data.js"></script>
+  <script src="js/functions.js"> </script>
+  <script src="app.js"></script>
 </body>
 
 </html>

@@ -737,77 +737,15 @@ btnSearch.addEventListener("click", () => {
     }
 
 });
-document.addEventListener("DOMContentLoaded", function () {
-    const studentsPerPage = 3; // Ajustează la numărul dorit de studenți pe pagină
-    let currentPage = 1;
 
-    // Funcția pentru afișarea paginată a studenților
-    function showPage(page, searchTerm = "") {
-        const startIndex = (page - 1) * studentsPerPage;
-        const endIndex = startIndex + studentsPerPage;
-        const filteredStudents = filterStudents(searchTerm);
-        const studentsToShow = filteredStudents.slice(startIndex, endIndex);
-
-        // Afișează studenții pe pagină
-        const studentItems = document.querySelectorAll(".student-item");
-        studentItems.forEach((studentItem, index) => {
-            studentItem.style.display = "none";
-            if (studentsToShow[index]) {
-                studentsToShow[index].style.display = "block";
-            }
-        });
-
-        // Actualizează butoanele de paginare
-        updatePaginationButtons(filteredStudents.length);
+function filterStudents(searchTerm) {
+    if (!searchTerm) {
+        return data;
     }
 
-    // Funcția pentru filtrarea studenților după nume
-    function filterStudents(searchTerm) {
-        if (!searchTerm) {
-            return data;
-        }
+    return data.filter((student) =>
+        student.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+}
 
-        return data.filter((student) =>
-            student.name.toLowerCase().includes(searchTerm.toLowerCase())
-        );
-    }
 
-    // Funcția pentru actualizarea butoanelor de paginare
-    function updatePaginationButtons(totalStudents) {
-        const totalPages = Math.ceil(totalStudents / studentsPerPage);
-        const linkList = document.querySelector(".pagination .link-list");
-
-        // Șterge butoanele existente
-        linkList.innerHTML = "";
-
-        // Adaugă butoane pentru fiecare pagină
-        for (let i = 1; i <= totalPages; i++) {
-            const button = document.createElement("button");
-            button.type = "button";
-            button.textContent = i;
-            button.addEventListener("click", function () {
-                showPage(i);
-            });
-
-            const li = document.createElement("li");
-            li.appendChild(button);
-            linkList.appendChild(li);
-        }
-
-        // Adaugă clasa "active" pentru butonul paginii curente
-        const currentPageButton = linkList.querySelector(`li:nth-child(${currentPage}) button`);
-        if (currentPageButton) {
-            currentPageButton.classList.add("active");
-        }
-    }
-
-    // Inițializează afișarea paginată la început
-    showPage(currentPage);
-
-    // Adaugă eveniment pentru butonul de căutare
-    const searchButton = document.querySelector(".student-search button");
-    searchButton.addEventListener("click", function () {
-        const searchTerm = document.querySelector(".student-search input").value;
-        showPage(1, searchTerm);
-    });
-});

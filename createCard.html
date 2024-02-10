@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Creator</title>
+</head>
+
+<body>
+
+    <h2>Introduceți datele pentru a crea cardul dvs:</h2>
+
+    <form id="formData">
+        <label for="firstName">First Name:</label>
+        <input type="text" class="firstName">
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" class="lastName">
+
+        <label for="email">Email:</label>
+        <input type="email" class="email">
+
+        <label for="avatarURL">Avatar URL:</label>
+        <input type="url" class="avatarURL">
+
+        <label for="registrationDate">Registration Date:</label>
+        <input type="date" class="registrationDate">
+
+        <button type="button" class="btnCreateCard">Submit</button>
+    </form>
+
+    <ul id="cardList"></ul>
+
+    <script src="createCard.js"></script>
+</body>
+
+</html>
