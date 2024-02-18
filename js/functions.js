@@ -104,27 +104,35 @@ function resetCards() {
     let cards = lista.children;
 
     for (let i = 0; i < cards.length; i++) {
-        let parent = cards[i].parentNode;
-        let div1 = parent.firstChild;
 
-        let name = div1.firstChild;
-        let email = div1.secondChild;
         let btnsave = cards[i].querySelector(".save");
 
         if (btnsave !== null) {
             if (btnsave.classList.contains("save")) {
 
+                let parent = cards[i];
+                let div1 = parent.firstChild;
+
+                let name = div1.querySelector(".nametxtbox");
+                let email = div1.querySelector(".emailtxtbox");
+
+                console.log(name.textContent);
+
                 btnsave.classList = "update";
                 btnsave.textContent = "Update";
 
                 let newName = document.createElement("h3");
-                newName.textContent = name.value;
+                newName.textContent = name.textContent;
 
                 let newEmail = document.createElement(".email");
+                newEmail.classList = "email";
                 newEmail.textContent = email.value;
 
-                cards[i].replaceChild(newName, name);
-                cards[i].replaceChild(newEmail, email);
+                div1.replaceChild(newName, name);
+                div1.replaceChild(newEmail, email);
+
+
+
             }
         }
 
@@ -132,5 +140,85 @@ function resetCards() {
 
 }
 
+function deleteByEmail(email) {
+    let aux = data.filter(el => el.email !== email);
+    data = [...aux];
+}
 
+function updateBYEmail(email, newEmail, newName) {
+
+    const aux = data.findIndex(item => item.email === email);
+
+    data[aux - 1].email = newEmail;
+    data[aux - 1].name.first = newName;
+    data[aux - 1].name.last = '';
+
+
+}
+
+function findByEmail(email) {
+
+    let aux = data.findIndex(a => a.email === email);
+    return data[aux];
+
+}
+
+//card update
+
+/*<li class="student-item cf">
+    <div class="student-details">
+        <img class="avatar" src="https://randomuser.me/api/portraits/women/25.jpg" alt="Profile Picture">
+            <input class="nametxtbox">
+                <input class="emailtxtbox">
+                </div>
+                <div class="joined-details">
+                    <span class="date">Joined 12-15-2005</span>
+                </div>
+                <div class="action">
+                    <button class="delete">Delete</button>
+                    <button class="update">Update</button>
+                </div>
+            </li>*/
+
+//card initial
+
+/*<li class="student-item cf">
+<div class="student-details">
+<img class="avatar" src="https://randomuser.me/api/portraits/women/25.jpg" alt="Profile Picture">
+<h3>Ethel Dean</h3>
+<span class="email">ethel.dean@example.com</span>
+</div>
+<div class="joined-details">
+<span class="date">Joined 12-15-2005</span>
+</div>
+<div class="action">
+<button class="delete">Delete</button>
+<button class="update">Update</button>
+</div>
+</li>*/
+
+function setCardInitState(card, email) {
+    let obj = findByEmail(email);
+
+    card.innerHTML = `
+        <div class="student-details">
+            <img class="avatar" src="${obj.picture.large}" alt="Profile Picture">
+            <h3>${obj.name.first + " " + obj.name.last}</h3>
+            <span class="email">${obj.email}</span>
+        </div>
+        <div class="joined-details">
+            <span class="date">${obj.registered.date}</span>
+        </div>
+        <div class="action">
+            <button class="delete">Delete</button>
+            <button class="update">Update</button>
+        </div>
+    `;
+}
+
+function addCard(card) {
+
+    data.push(card);
+
+}
 

@@ -1,5 +1,5 @@
 
-const data = [
+let data = [
     {
         name: {
             title: "Miss",
